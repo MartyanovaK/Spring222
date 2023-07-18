@@ -4,27 +4,27 @@
 <head>
     <meta charset="UTF-8" />
     <title>Car</title>
-    <style>table th, table td {padding: 5px;}</style>
 </head>
 
 <body>
+<table>
 <h1>th:each</h1>
 
-<table border="1">
+<thead>
     <tr>
         <th>id</th>
         <th>name</th>
         <th>model/th>
     </tr>
 
-    <tr th:each="lst : ${cars}">
+    <tr th:each="cars : ${cars}">
         <td th:utext="${cars.id}">id</td>
         <td th:utext="${cars.name}">name</td>
         <td th:utext="${cars.model}">model</td>
     </tr>
 
+</thead>
 </table>
-
 </body>
 
 </html>
