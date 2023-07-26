@@ -4,6 +4,9 @@ public class Car {
     private int id;
     private String name;
     private String model;
+    public Car() {
+
+    }
 
     public Car(int id, String name, String model) {
         this.model = model;
@@ -33,5 +36,14 @@ public class Car {
 
     public void setNumber(String number) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", model='" + model + '\'' +
+                '}';
     }
 }

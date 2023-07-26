@@ -10,15 +10,17 @@ import java.util.List;
 
 @Controller
 public class CarController {
-    private static int CARS_COUNT;
-    @GetMapping(value = "/")
-    public String printWelcome(@RequestParam(value = "count", defaultValue = "5") int allCars, Model model) {
-        List<Car> cars = new ArrayList<>();
-        cars.add(new Car(++CARS_COUNT, "BMW", "dgip"));
-        cars.add(new Car(++CARS_COUNT, "Mersdes", "inomarka"));
-        cars.add(new Car(++CARS_COUNT, "ford", "miniven"));
+    private static List<Car> cars = new ArrayList<Car>();
+
+    static {
+        cars.add(new Car(1, "BMW", "dgip"));
+        cars.add(new Car(2, "Mersdes", "inomarka"));
+        cars.add(new Car(3, "ford", "miniven"));
+    }
+    @GetMapping(value = "/cars")
+    public String printCars(@RequestParam(value = "count") int allCars, Model model) {
         cars = Servicelmpl.getCount(cars, allCars);
         model.addAttribute("cars", cars);
-        return "cars";
+        return "/cars";
     }
 }
