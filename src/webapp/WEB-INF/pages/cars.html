@@ -18,9 +18,9 @@
     </tr>
 
     <tr th:each="car : ${cars}">
-        <td th:utext="${cars.id}">id</td>
-        <td th:utext="${cars.name}">name</td>
-        <td th:utext="${cars.model}">model</td>
+        <td th:utext="${car.getId()}">id</td>
+        <td th:utext="${car.getName()}">name</td>
+        <td th:utext="${car.getModel()}">model</td>
     </tr>
 
     </table>

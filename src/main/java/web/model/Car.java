@@ -14,6 +14,14 @@ public class Car {
         this.id = id;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setModel(String model) {
         this.model = model;
     }
