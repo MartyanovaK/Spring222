@@ -1,16 +1,16 @@
 package web.service;
-
-
+import org.springframework.beans.factory.annotation.Autowired;
+import web.Dao.CarDao;
 import web.model.Car;
-
-
 import java.util.List;
-import java.util.stream.Collectors;
 
+
+@org.springframework.stereotype.Service
 public class Servicelmpl implements Service {
-
-    public static List<Car> getCount(List<Car> cars, int number) {
-        if (number == 0 || number > 5) return cars;
-        return cars.stream().limit(number).collect(Collectors.toList());
+    @Autowired
+    private CarDao carDao;
+    @Override
+    public List<Car> getCount(int count) {
+        return carDao.getCount(count);
     }
 }

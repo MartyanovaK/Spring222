@@ -8,23 +8,20 @@
 
 <body>
     <h1>Cars</h1>
-    <br/><br/>
+    <br/>
     <div>
         <table border="1">
-    <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>model</th>
-    </tr>
-
-    <tr th:each="car : ${cars}">
-        <td th:utext="${car.getId()}">id</td>
-        <td th:utext="${car.getName()}">name</td>
-        <td th:utext="${car.getModel()}">model</td>
-    </tr>
-
-    </table>
- </div>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>model</th>
+            </tr>
+            <tr th:each="car : ${cars}">
+                <td th:utext="${car.getId()}"></td>
+                <td th:utext="${car.getName()}"></td>
+                <td th:utext="${car.getModel()}"></td>
+            </tr>
+        </table>
+    </div>
 </body>
-
 </html>

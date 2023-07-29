@@ -1,26 +1,24 @@
 package web.controller;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import web.model.Car;
 import web.service.Servicelmpl;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class CarController {
-    private static List<Car> cars = new ArrayList<Car>();
-
-    static {
-        cars.add(new Car(1, "BMW", "dgip"));
-        cars.add(new Car(2, "Mersdes", "inomarka"));
-        cars.add(new Car(3, "ford", "miniven"));
-    }
+    @Autowired
+    private Servicelmpl servicelmpl;
     @GetMapping(value = "/cars")
-    public String printCars(@RequestParam(value = "count") int allCars, Model model) {
-        cars = Servicelmpl.getCount(cars, allCars);
+    public String printCars(@RequestParam(value = "count", defaultValue = "5") int count, Model model) {
+        if (count > 5 || count <= 0) {
+            count = 5;
+        }
+        List<Car> cars = servicelmpl.getCount(count);
         model.addAttribute("cars", cars);
-        return "/cars";
+        return "cars";
     }
 }
