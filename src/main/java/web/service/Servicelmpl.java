@@ -3,10 +3,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import web.Dao.CarDao;
 import web.model.Car;
 import java.util.List;
+import org.springframework.stereotype.Service;
 
-
-@org.springframework.stereotype.Service
-public class Servicelmpl implements Service {
+@Service
+public class Servicelmpl implements service {
     @Autowired
     private CarDao carDao;
     @Override

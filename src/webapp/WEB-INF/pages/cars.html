@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Loop</title>
+    <title>Cars</title>
     <style>table th, table td {padding: 5px;}</style>
 </head>
 
@@ -11,18 +11,14 @@
     <h1>Cars</h1>
     <br/>
     <div>
-        <table border="1">
             <tr>
                 <th>id</th>
                 <th>name</th>
                 <th>model</th>
             </tr>
-            <tr th:each="car : ${cars}">
-                <td th:utext="${car.id}">id</td>
-                <td th:utext="${car.name}">name</td>
-                <td th:utext="${car.model}">model</td>
-            </tr>
-        </table>
+            <th:block th:each="car : ${cars}">
+                <h1 th:text="${car}" ></h1>
+            </th:block>
     </div>
 </body>
 </html>
