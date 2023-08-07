@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Servicelmpl implements service {
+public class Servicelmpl implements ServiceCar {
     @Autowired
     private CarDao carDao;
     @Override

@@ -10,18 +10,21 @@
 
 <body>
     <h1>Cars</h1>
-<table>
-    <div>
+    <table>
+        <div>
             <tr>
                 <th>id</th>
                 <th>name</th>
                 <th>model</th>
             </tr>
-            <th:block th:each="car : ${cars}">
-                <h1 th:text="${car}" ></h1>
-            </th:block>
-    </div>
-</table>
+            <tr th:each="car : ${cars}">
+                <td th:text="${car.id}"></td>
+                <td th:text="${car.name}"></td>
+                <td th:text="${car.model}"></td>
+            </tr>
+        </div>
+    </table>
+
 </body>
 
 </html>

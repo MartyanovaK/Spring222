@@ -3,6 +3,6 @@ package web.service;
 import web.model.Car;
 import java.util.List;
 
-public interface service {
-    public List<Car> getCount(int count);
+public interface ServiceCar {
+    List<Car> getCount(int count);
 }
